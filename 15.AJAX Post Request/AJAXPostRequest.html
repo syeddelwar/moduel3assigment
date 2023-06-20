@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>  
+    
+    function sendPostRequest() {
+ 
+  var xhr = new XMLHttpRequest();
+
+ 
+  xhr.open("POST", "https://api.example.com/submit", true);
+
+  // Set the request headers
+  xhr.setRequestHeader("Content-Type", "application/json");
+
+  // Define the data to be sent in the request body
+  var data = {
+    name: "John Doe",
+    email: "johndoe@example.com"
+  };
+
+  // Convert the data to a JSON string
+  var jsonData = JSON.stringify(data);
+
+  // Set up the event handler for when the request is complete
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Request successful
+        console.log("POST request succeeded");
+        console.log(xhr.responseText);
+      } else {
+        // Request failed
+        console.log("POST request failed");
+      }
+    }
+  };
+
+  // Send the POST request with the JSON payload
+  xhr.send(jsonData);
+}
+sendPostRequest();
+        
+       </script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getDayOfWeek(dateString) {
+        var dateParts = dateString.split("-");
+        var year = parseInt(dateParts[0]);
+        var month = parseInt(dateParts[1]) - 1; // Months are zero-based
+        var day = parseInt(dateParts[2]);
+
+        var date = new Date(year, month, day);
+        var daysOfWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+
+        var dayOfWeek = daysOfWeek[date.getDay()];
+        return dayOfWeek;
+      }
+      var date = "2022-05-23";
+      var dayOfWeek = getDayOfWeek(date);
+      console.log(dayOfWeek);
+      var currentDate = new Date();
+      var currentDayOfWeek = getDayOfWeek(
+        currentDate.toISOString().slice(0, 10)
+      );
+      console.log(currentDayOfWeek);
+    </script>
+  </body>
+</html>

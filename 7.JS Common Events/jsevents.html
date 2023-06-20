@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Common Events Example</title>
+</head>
+<body>
+  <h1>JS Common Events Example</h1>
+
+  <p>Click anywhere on the page.</p>
+
+  <script>
+    // Click event
+    document.addEventListener('click', function(event) {
+      var x = event.clientX;
+      var y = event.clientY;
+      alert('Clicked at coordinates (x, y): ' + x + ', ' + y);
+    });
+
+    // Keydown event
+    document.addEventListener('keydown', function(event) {
+      var keyCode = event.keyCode;
+      alert('Key pressed. Key code: ' + keyCode);
+    });
+
+    // Mouseover event
+    var image = document.getElementById('myImage');
+    image.addEventListener('mouseover', function() {
+      image.src = 'path/to/another-image.jpg'; // Replace with the path to your desired image
+    });
+  </script>
+
+</body>
+</html>

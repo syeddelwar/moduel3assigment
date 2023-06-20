@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigator Object Example</title>
+</head>
+<body>
+  <h1>Navigator Object Example</h1>
+
+  <p id="browserInfo"></p>
+
+  <script>
+    function getBrowserInfo() {
+      var browserName = '';
+      var browserVersion = '';
+
+      var userAgent = navigator.userAgent;
+      
+      if (userAgent.indexOf("Chrome") > -1) {
+        browserName = "Google Chrome";
+        browserVersion = userAgent.substring(userAgent.indexOf("Chrome") + 7).split(" ")[0];
+      } else if (userAgent.indexOf("Safari") > -1) {
+        browserName = "Safari";
+        browserVersion = userAgent.substring(userAgent.indexOf("Version") + 8).split(" ")[0];
+      } else if (userAgent.indexOf("Firefox") > -1) {
+        browserName = "Mozilla Firefox";
+        browserVersion = userAgent.substring(userAgent.indexOf("Firefox") + 8).split(" ")[0];
+      } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident/") > -1) {
+        browserName = "Internet Explorer";
+        browserVersion = userAgent.substring(userAgent.indexOf("MSIE") + 5, userAgent.indexOf("."));
+      } else {
+        browserName = "Unknown";
+        browserVersion = "Unknown";
+      }
+
+      return {
+        name: browserName,
+        version: browserVersion
+      };
+    }
+
+    var browserInfo = getBrowserInfo();
+    var browserInfoElement = document.getElementById('browserInfo');
+    browserInfoElement.textContent = 'Browser: ' + browserInfo.name + ', Version: ' + browserInfo.version;
+  </script>
+
+</body>
+</html>

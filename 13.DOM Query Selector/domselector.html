@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Query Selector Example</title>
+  <style>
+   
+
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM Query Selector Example</h1>
+
+  <p id="paragraph1">This is paragraph 1.</p>
+
+  <p class="color">This is paragraph 2 with class "red".</p>
+
+  <p class="color" id="paragraph3">This is paragraph 3 with class "green" and ID "paragraph3".</p>
+
+  <p class="blue">This is paragraph 4 with class "blue".</p>
+
+  <script>
+    function changeTextColor() {
+      var paragraphs = document.querySelectorAll('.color'); // Select all paragraphs with class "red"
+
+      for (var i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = 'red'; // Change the text color to red
+      }
+    }
+  </script>
+
+  <button onclick="changeTextColor()">Change Text Color to Red</button>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geolocation Example</title>
+</head>
+<body>
+  <h1>Geolocation Example</h1>
+
+  <p id="location"></p>
+
+  <script>
+    function getCurrentLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var locationElement = document.getElementById('location');
+      locationElement.textContent = 'Latitude: ' + latitude + ', Longitude: ' + longitude;
+    }
+
+    getCurrentLocation();
+  </script>
+
+</body>
+</html>

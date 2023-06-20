@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML DOM Document Example</title>
+</head>
+<body>
+  <h1>HTML DOM Document Example</h1>
+
+  <button id="myButton">Click Me</button>
+
+  <p id="myParagraph">This is a paragraph.</p>
+
+  <script>
+    var button = document.getElementById('myButton');
+    var paragraph = document.getElementById('myParagraph');
+
+    button.addEventListener('click', function() {
+      paragraph.textContent = 'Button Clicked!';
+    });
+  </script>
+
+</body>
+</html>

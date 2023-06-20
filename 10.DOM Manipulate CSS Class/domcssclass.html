@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulate CSS Class Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM Manipulate CSS Class Example</h1>
+
+  <button onclick="addHighlightClass()">Add Highlight Class</button>
+
+  <p id="myParagraph">This is a paragraph.</p>
+
+  <script>
+    function addHighlightClass() {
+      var paragraph = document.getElementById('myParagraph');
+      paragraph.classList.add('highlight');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    function squareRootOfSumOfSquares(numbers) {
+        var sumOfSquares = 0;
+      
+        for (var i = 0; i < numbers.length; i++) {
+          sumOfSquares += Math.pow(numbers[i], 2);
+        }
+      
+        return Math.sqrt(sumOfSquares);
+      }
+
+      var numbers = [3, 4, 5];
+var result = squareRootOfSumOfSquares(numbers);
+console.log(result);
+
+      </script>
+</body>
+</html>

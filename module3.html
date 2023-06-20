@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+      <script>
+        //   function sqrtRoot(numbers){
+        //     let sumOfSquares = 0 ;
+        //      for (let i=0; i<numbers.length;i++){
+        //         sumOfSquares += Math.pow(numbers[i] , 2);
+        //      }
+
+        //      const squareRoot =Math.sqrt(sumOfSquares);
+        //      return squareRoot;
+
+        //        }
+
+        //    const numbers = [4,5,6];
+        //     const result =  sqrtRoot(numbers);
+        //     console.log(result)  ;      
+            
+            
+
+        // function sumOfSquares(numbers) {
+        //     const sumOfSquares = numbers.reduce((total, num) => total + Math.pow(num, 2), 0);
+        //     const squareRoot = Math.sqrt(sumOfSquares);
+        //     console.log("Square root of sum of squares:", squareRoot);
+        //     }
+
+        //     // Example usage
+        //     const numbers = [3, 4, 5];
+        //     sumOfSquares(numbers);
+   
+
+    //     function isPrime(number) {
+    // //             if (number <= 1) {
+    //                 return false; // Numbers less than or equal to 1 are not prime
+    //             }
+
+    //             for (let i = 2; i <= Math.sqrt(number); i++) {
+    //                 if (number % i === 0) {
+    //                 return false; // Number is divisible by i, not prime
+    //                 }
+    //             }
+
+    //             return true; // Number is prime
+    //             }
+
+    //     console.log(isPrime(10)); // Output: true
+    //    console.log(isPrime(11)); // Output: false
+    //     console.log(isPrime(12)); // Output: false
+  
+
+//         function isPrime(number) {
+//   if (number <= 1) {
+//     return false; // Numbers less than or equal to 1 are not prime
+//   }
+
+//   if (number === 2) {
+//     return true; // 2 is a prime number
+//   }
+
+//   if (number % 2 === 0) {
+//     return false; // Even numbers (except 2) are not prime
+//   }
+
+//   for (let i = 3; i <= Math.sqrt(number); i += 2) {
+//     if (number % i === 0) {
+//       return false; // Number is divisible by i, not prime
+//     }
+//   }
+
+//   return true; // Number is prime
+// }
+
+
+
+// console.log(isPrime(10)); // Output: true
+// console.log(isPrime(11)); // Output: false
+
+// function openWindow(url, width, height) {
+//   window.open(url, '_blank', `width=${width},height=${height}`);
+// }
+
+
+// function openWindowWithExampleURL() {
+//   const url = 'https://www.example.com';
+//   const width = 800;
+//   const height = 600;
+//   window.open(url, '_blank', `width=${width},height=${height}`);
+// }
+
+// openWindowWithExampleURL();
+
+// function detectBrowser() {
+//   const userAgent = navigator.userAgent;
+//   let browserName = '';
+//   let browserVersion = '';
+
+//   // Check for Edge (Chromium-based)
+//   if (userAgent.indexOf('Edg') !== -1) {
+//     browserName = 'Microsoft Edge (Chromium-based)';
+//     browserVersion = userAgent.substring(userAgent.indexOf('Edg') + 4);
+//   }
+//   // Check for Firefox
+//   else if (userAgent.indexOf('Firefox') !== -1) {
+//     browserName = 'Mozilla Firefox';
+//     browserVersion = userAgent.substring(userAgent.indexOf('Firefox') + 8);
+//   }
+//   else {
+//     browserName = 'Unknown';
+//     browserVersion = 'N/A';
+//   }
+
+//   return {
+//     name: browserName,
+//     version: browserVersion
+//   };
+// }
+//   // Check for Chrome
+//   else if (userAgent.indexOf('Chrome') !== -1) {
+//     browserName = 'Google Chrome';
+//     browserVersion = userAgent.substring(userAgent.indexOf('Chrome') + 7);
+//   }
+//   // Check for Safari
+//   else if (userAgent.indexOf('Safari') !== -1) {
+//     browserName = 'Apple Safari';
+//     browserVersion = userAgent.substring(userAgent.indexOf('Version') + 8);
+//   }
+//   // Check for Opera
+//   else if (userAgent.indexOf('Opera') !== -1 || userAgent.indexOf('OPR') !== -1) {
+//     browserName = 'Opera';
+//     browserVersion = userAgent.indexOf('Opera') !== -1 ? userAgent.substring(userAgent.indexOf('Opera') + 6) : userAgent.substring(userAgent.indexOf('OPR') + 4);
+//   }
+//   // Check for Internet Explorer
+//   else if (userAgent.indexOf('Trident') !== -1) {
+//     browserName = 'Internet Explorer';
+//     const rvIndex = userAgent.indexOf('rv:');
+//     browserVersion = userAgent.substring(rvIndex + 3, userAgent.indexOf(')', rvIndex));
+//   }
+//   // Unknown browser
+//   else {
+//     browserName = 'Unknown';
+//     browserVersion = 'N/A';
+//   }
+
+//   return {
+//     name: browserName,
+//     version: browserVersion
+//   };
+// }
+
+
+function displayBrowserInfo() {
+  // Get the browser name and version.
+  const browserName = navigator.userAgent;
+  const browserVersion = navigator.appVersion;
+
+  // Display the browser information.
+  console.log("Browser name:", browserName);
+  console.log("Browser version:", browserVersion);
+}
+
+if (require.main === module) {
+  displayBrowserInfo();
+}
+
+
+                 
+    </script>
+   
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS DOM Working with Form Input Example</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>JS DOM Working with Form Input Example</h1>
+
+  <form id="myForm" onsubmit="validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <span id="nameError" class="error"></span>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <span id="emailError" class="error"></span>
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <span id="passwordError" class="error"></span>
+    <br><br>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" required>
+    <span id="confirmPasswordError" class="error"></span>
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission for demonstration purposes
+
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var passwordInput = document.getElementById('password');
+      var confirmPasswordInput = document.getElementById('confirmPassword');
+
+      var nameError = document.getElementById('nameError');
+      var emailError = document.getElementById('emailError');
+      var passwordError = document.getElementById('passwordError');
+      var confirmPasswordError = document.getElementById('confirmPasswordError');
+
+      // Reset error messages
+      nameError.textContent = '';
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+
+      // Validate Name
+      var namePattern = /^[A-Za-z]+$/;
+      if (!namePattern.test(nameInput.value)) {
+        nameError.textContent = 'Name should only contain letters.';
+      }
+
+      // Validate Email
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = 'Invalid email address.';
+      }
+
+      // Validate Password
+      var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      if (!passwordPattern.test(passwordInput.value)) {
+        passwordError.textContent = 'Password should have a minimum length of 8 characters, including at least one uppercase letter, one lowercase letter, and one digit.';
+      }
+
+      // Validate Confirm Password
+      if (confirmPasswordInput.value !== passwordInput.value) {
+        confirmPasswordError.textContent = 'Passwords do not match.';
+      }
+    }
+  </script>
+
+</body>
+</html>
